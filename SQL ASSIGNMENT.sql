@@ -27,7 +27,7 @@ SET SQL_SAFE_UPDATES = 0;
 DELETE from Students where student_id=105;                                                        
 select * from Students where age>20;                                                               
 select * from Students order by age DESC;                                                          
-SELECT * from Students where student_id<104;                                                      
+SELECT * from Students order by limit 3;                                                      
 
 
 CREATE TABLE Course(                                                                               
