@@ -31,15 +31,34 @@ SELECT * from Students where student_id<104;
 
 
 CREATE TABLE Course(                                                                               
-course_id INT,
+course_id INT PRIMARY KEY AUTO_INCREMENT,
 course_name TEXT,
 duration INT
 );
 ALTER TABLE Course                                                                                 
 DROP column duration;
-ALTER TABLE Course ADD column DURATION INt;
 insert into Course values                                                
-(1,'BBA','3'),
-(2,'BCOM','3'),
-(3,'LLB','5');
+(1,'BBA'),
+(2,'BCOM'),
+(3,'LLB');
 SELECT * FROM Course;
+CREATE TABLE Employee(
+employee_id INT PRIMARY KEY AUTO_INCREMENT,
+employee_name varchar(30)NOT NULL,
+employee_add varchar(30),
+course_id int not null,
+foreign key (course_id) references Course( course_id)
+);
+INSERT INTO Employee values
+(101,'Rahul','Noida','2'),
+(102,'Kamlesh','Agra','1'),
+(103,'Aman','Noida','3'),
+(104,'Vikas','Delhi','2'),
+(105,'Ritik','Delhi','1'),
+(106,'Rohit','Noida','2');
+select * from Course c
+Join Employee e
+on c.course_id = e.course_id ;
+truncate Employee;
+select * from Employee;
+  
